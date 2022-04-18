@@ -1,8 +1,11 @@
 <div class="box">
   <h1>Not started</h1>
   <div class="container-cards">
-    <ul>
+    <ul *ngIf="pegarTask()">
+      <li *ngFor="let task of pegarTask()">
+        <input type="text" [(ngModel)]="task.content">
+      </li>
     </ul>
-    <button class="new">+</button>
+    <button (click)="criarTask()" class="new">+</button>
   </div>
 </div>

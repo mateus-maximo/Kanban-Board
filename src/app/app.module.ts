@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { NotStartedComponent } from './components/not-started/not-started.component';
 import { InProgressComponent } from './components/in-progress/in-progress.component';
 import { CompletedComponent } from './components/completed/completed.component';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +16,8 @@ import { CompletedComponent } from './components/completed/completed.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
