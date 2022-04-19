@@ -8,6 +8,8 @@ import { InProgressComponent } from './components/in-progress/in-progress.compon
 import { CompletedComponent } from './components/completed/completed.component';
 import { FormsModule } from '@angular/forms';
 import { AutoFocusDirective } from './diretivas/autofocus.directive';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon'
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { AutoFocusDirective } from './diretivas/autofocus.directive';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

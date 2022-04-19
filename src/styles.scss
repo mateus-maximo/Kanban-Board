@@ -55,6 +55,8 @@ li {
   margin-bottom: 20px;
   border: 2px solid #000;
   border-radius: 5px;
+  display: flex;
+  align-items: center;
 }
 
 input[type="text"] {
@@ -82,4 +84,13 @@ button.new:hover {
 input[type=text].newTask {
   border: 2px solid #000;
   border-radius: 5px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.icon-delete {
+  color: red;
+  margin-right: 10px;
+  cursor: pointer;
 }

@@ -4,6 +4,7 @@
     <ul *ngIf="pegarTask()">
       <li *ngFor="let task of pegarTask()">
         <input type="text" [(ngModel)]="task.content">
+        <mat-icon class="icon-delete">delete</mat-icon>
       </li>
     </ul>
     <button *ngIf="btnCriarTask" (click)="criarTask()" class="new">+</button>
