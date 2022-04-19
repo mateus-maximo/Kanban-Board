@@ -10,20 +10,24 @@ import { TaskService } from '../task.service';
 export class NotStartedComponent implements OnInit {
 
   constructor(private taskService: TaskService) { }
-  contentTask = ''
-  ngOnInit(): void {
-  }
+
+  btnCriarTask: boolean = true;
+  contentNewTask: string = ''
+
+  ngOnInit(): void {}
 
   criarTask(): void {
-    this.taskService.cards.push({content: '', situation: 1})
-    //mudar o botão para um campo input
-    //esperar que o usuário aperte o botão enteer
-    //fazer verificação se está vazio ou nao o input
-    //voltar para o botão caso a task tenha sido adicionada ou o input tenha saído do foco
+    this.btnCriarTask = false;
   }
 
   pegarTask(): Array<Task> {
     return this.taskService.retornaNotStarted
+  }
+
+  adicionarNovaTask(): void {
+    this.taskService.cards.push({content: this.contentNewTask, situation: 0});
+    this.btnCriarTask = true;
+    this.contentNewTask = ''
   }
 
 }

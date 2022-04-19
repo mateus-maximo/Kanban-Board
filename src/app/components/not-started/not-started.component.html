@@ -6,6 +6,7 @@
         <input type="text" [(ngModel)]="task.content">
       </li>
     </ul>
-    <button (click)="criarTask()" class="new">+</button>
+    <button *ngIf="btnCriarTask" (click)="criarTask()" class="new">+</button>
+    <input *ngIf="!btnCriarTask" type="text" class="newTask" (keydown.enter)="adicionarNovaTask()" [(ngModel)]="contentNewTask" kbAutofocus>
   </div>
 </div>
