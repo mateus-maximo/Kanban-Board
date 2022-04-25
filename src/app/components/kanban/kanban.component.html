@@ -1,0 +1,34 @@
+<div class="box-cards">
+  <div class="box">
+    <h1 class="title">Not started</h1>
+    <div class="container-cards">
+      <ul *ngIf="pegarTask()">
+        <li *ngFor="let task of pegarTask(); let id = index">
+          <input type="text" [(ngModel)]="task.content">
+          <mat-icon class="icon-delete" (click)="apagarTask(id)">delete</mat-icon>
+        </li>
+      </ul>
+      <button *ngIf="btnCriarTask" (click)="criarTask()" class="new">+</button>
+      <input *ngIf="!btnCriarTask" type="text" class="newTask" (keydown.enter)="adicionarNovaTask()" [(ngModel)]="contentNewTask" kbAutofocus>
+    </div>
+  </div>
+
+  <div class="box">
+    <h1 class="title">In Progress</h1>
+    <div class="container-cards">
+      <ul>
+      </ul>
+      <button class="new">+</button>
+    </div>
+  </div>
+
+  <div class="box">
+    <h1 class="title">Completed</h1>
+    <div class="container-cards">
+      <ul>
+
+      </ul>
+      <button class="new">+</button>
+    </div>
+  </div>
+</div>

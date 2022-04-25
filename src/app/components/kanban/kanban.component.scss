@@ -1,0 +1,81 @@
+.box-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+h1.title {
+  font-family: 'Fira Code', monospace;
+  font-weight: bold;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  width: 350px;
+  min-height: 350px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container-cards {
+  min-height: 320px;
+  word-break: break-all;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+ul, li {
+  list-style: none;
+}
+
+li {
+  margin-bottom: 20px;
+  border: 2px solid #000;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 20px;
+  border: none;
+  outline: none;
+}
+
+button.new {
+  border: 2px solid #000;
+  border-radius: 5px;
+  padding: 3px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #fff;
+}
+
+button.new:hover {
+  cursor: pointer;
+  background-color: #999;
+}
+
+input[type=text].newTask {
+  border: 2px solid #000;
+  border-radius: 5px;
+}
+
+.icon-delete {
+  color: red;
+  margin-right: 10px;
+  cursor: pointer;
+}

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InProgressComponent } from './in-progress.component';
+import { KanbanComponent } from './kanban.component';
 
-describe('InProgressComponent', () => {
-  let component: InProgressComponent;
-  let fixture: ComponentFixture<InProgressComponent>;
+describe('KanbanComponent', () => {
+  let component: KanbanComponent;
+  let fixture: ComponentFixture<KanbanComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InProgressComponent ]
+      declarations: [ KanbanComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InProgressComponent);
+    fixture = TestBed.createComponent(KanbanComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

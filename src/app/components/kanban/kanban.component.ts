@@ -3,11 +3,11 @@ import { Task } from 'src/app/model/task.model';
 import { TaskService } from '../task.service';
 
 @Component({
-  selector: 'app-not-started',
-  templateUrl: './not-started.component.html',
-  styleUrls: ['./not-started.component.scss']
+  selector: 'app-kanban',
+  templateUrl: './kanban.component.html',
+  styleUrls: ['./kanban.component.scss']
 })
-export class NotStartedComponent implements OnInit {
+export class KanbanComponent implements OnInit {
 
   constructor(private taskService: TaskService) { }
 
