@@ -2,33 +2,42 @@
   <div class="box">
     <h1 class="title">Not started</h1>
     <div class="container-cards">
-      <ul *ngIf="pegarTask()">
-        <li *ngFor="let task of pegarTask(); let id = index">
+      <ul *ngIf="pegarTaskNotStarted()">
+        <li *ngFor="let task of pegarTaskNotStarted(); let id = index">
           <input type="text" [(ngModel)]="task.content">
-          <mat-icon class="icon-delete" (click)="apagarTask(id)">delete</mat-icon>
+          <mat-icon class="icon-delete" (click)="apagarTask(id, 1)">delete</mat-icon>
         </li>
       </ul>
-      <button *ngIf="btnCriarTask" (click)="criarTask()" class="new">+</button>
-      <input *ngIf="!btnCriarTask" type="text" class="newTask" (keydown.enter)="adicionarNovaTask()" [(ngModel)]="contentNewTask" kbAutofocus>
+      <button *ngIf="btnCriarTaskNotStarted" (click)="criarTaskNotStarted()" class="new">+</button>
+      <input *ngIf="!btnCriarTaskNotStarted" type="text" class="newTask" (keydown.enter)="adicionarNovaTask(1)" [(ngModel)]="contentNewTask" kbAutofocus>
     </div>
   </div>
 
   <div class="box">
     <h1 class="title">In Progress</h1>
     <div class="container-cards">
-      <ul>
+      <ul *ngIf="pegarTaskInProgress()">
+        <li *ngFor="let task of pegarTaskInProgress(); let id = index">
+          <input type="text" [(ngModel)]="task.content">
+          <mat-icon class="icon-delete" (click)="apagarTask(id, 2)">delete</mat-icon>
+        </li>
       </ul>
-      <button class="new">+</button>
+      <button *ngIf="btnCriarTaskInProgress" (click)="criarTaskInProgress()" class="new">+</button>
+      <input *ngIf="!btnCriarTaskInProgress" type="text" class="newTask" (keydown.enter)="adicionarNovaTask(2)" [(ngModel)]="contentNewTask" kbAutofocus>
     </div>
   </div>
 
   <div class="box">
     <h1 class="title">Completed</h1>
     <div class="container-cards">
-      <ul>
-
+      <ul *ngIf="pegarTaskCompleted()">
+        <li *ngFor="let task of pegarTaskCompleted(); let id = index">
+          <input type="text" [(ngModel)]="task.content">
+          <mat-icon class="icon-delete" (click)="apagarTask(id, 3)">delete</mat-icon>
+        </li>
       </ul>
-      <button class="new">+</button>
+      <button *ngIf="btnCriarTaskCompleted" (click)="criarTaskCompleted()" class="new">+</button>
+      <input *ngIf="!btnCriarTaskCompleted" type="text" class="newTask" (keydown.enter)="adicionarNovaTask(3)" [(ngModel)]="contentNewTask" kbAutofocus>
     </div>
   </div>
 </div>

@@ -10,15 +10,23 @@ export class TaskService {
     {content: 'teste', situation: 1},
     {content: 'teste', situation: 1},
     {content: 'teste', situation: 1},
+    {content: 'aeee', situation: 2},
+    {content: '3ee', situation: 3}
   ]
 
   constructor() { }
 
   //função que retorna apenas tasks not started
   get retornaNotStarted(): Array<Task> {
-    return this.cards;
+    return this.cards.filter(cards => cards.situation === 1);
   }
-  //função que retorna apenas tasks in progress
-  //função que retorna apenas tasks completed
-  //função que apaga uma determinada task
+
+  get retornaInProgress(): Array<Task> {
+    return this.cards.filter(cards => cards.situation === 2);
+  }
+
+  get retornaCompleted(): Array<Task> {
+    return this.cards.filter(cards => cards.situation === 3);
+  }
+
 }
