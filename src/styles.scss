@@ -16,6 +16,11 @@ body {
   align-items: center;
 }
 
+h1.title {
+  font-family: 'Fira Code', monospace;
+  font-weight: bold;
+}
+
 .cards {
   display: flex;
   justify-content: center;
@@ -34,7 +39,7 @@ body {
 }
 
 h1 {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
 }
 
@@ -85,9 +90,6 @@ input[type=text].newTask {
   border: 2px solid #000;
   border-radius: 5px;
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .icon-delete {
   color: red;

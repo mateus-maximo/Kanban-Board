@@ -30,4 +30,8 @@ export class NotStartedComponent implements OnInit {
     this.contentNewTask = ''
   }
 
+  apagarTask(id: number): void {
+    this.taskService.cards.splice(id, 1)
+  }
+
 }

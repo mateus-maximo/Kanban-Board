@@ -20,4 +20,5 @@ export class TaskService {
   }
   //função que retorna apenas tasks in progress
   //função que retorna apenas tasks completed
+  //função que apaga uma determinada task
 }
