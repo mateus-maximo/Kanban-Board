@@ -30,7 +30,7 @@ export class KanbanComponent implements OnInit {
     this.btnCriarTaskCompleted = false;
   }
 
-  pegarTaskNotStarted(): Array<Task> {
+  getTaskNotStarted(): Array<Task> {
     return this.taskService.retornaNotStarted
   }
 
@@ -42,18 +42,26 @@ export class KanbanComponent implements OnInit {
     return this.taskService.retornaCompleted
   }
 
-  adicionarNovaTask(situation: number): void {
-    this.taskService.cards.push({content: this.contentNewTask, situation: situation});
-    if(situation === 1) this.btnCriarTaskNotStarted = true;
-    else if(situation === 2) this.btnCriarTaskInProgress = true;
-    else this.btnCriarTaskCompleted = true;
+  addNewTask(situation: number): void {
+    if(situation === 1) {
+      this.taskService.cardsNotStarted.push({content: this.contentNewTask, situation})
+      this.btnCriarTaskNotStarted = true;
+    }
+    else if(situation === 2) {
+      this.taskService.cardsInProgress.push({content: this.contentNewTask, situation})
+      this.btnCriarTaskInProgress = true;
+    }
+    else {
+      this.taskService.cardsCompleted.push({content: this.contentNewTask, situation})
+      this.btnCriarTaskCompleted = true;
+    }
+
     this.contentNewTask = ''
   }
 
-  apagarTask(id: number, situation: number): void {
-    if(situation === 1) this.taskService.cards.splice(id, 1)
-    else if(situation === 2) this.taskService.cards.splice(this.pegarTaskNotStarted().length + id, 1)
-
-    else this.taskService.cards.splice(this.pegarTaskNotStarted().length + this.pegarTaskInProgress().length + id, 1)
+  deleteTask(id: number, situation: number): void {
+    if(situation === 1) this.taskService.cardsNotStarted.splice(id, 1)
+    else if(situation === 2) this.taskService.cardsInProgress.splice(id, 1)
+    else this.taskService.cardsCompleted.splice(id, 1)
   }
 }
