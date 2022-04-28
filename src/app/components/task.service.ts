@@ -6,42 +6,33 @@ import { Task } from '../model/task.model';
 })
 export class TaskService {
 
-  cardsNotStarted: Array<Task> = [
-    {content: 'teste', situation: 1},
-    {content: 'teste', situation: 1},
-    {content: 'teste', situation: 1},
-    {content: 'aeee', situation: 1},
-    {content: '3ee', situation: 1}
+  cardsNotStarted: string[] = [
+    "teste",
+    "teste"
   ]
 
-  cardsInProgress: Array<Task> = [
-    {content: 'teste', situation: 2},
-    {content: 'teste', situation: 2},
-    {content: 'teste', situation: 2},
-    {content: 'aeee', situation: 2},
-    {content: '3ee', situation: 2}
+  cardsInProgress: string[] = [
+    "teste2",
+    "teste2"
   ]
 
-  cardsCompleted: Array<Task> = [
-    {content: 'teste', situation: 3},
-    {content: 'teste', situation: 3},
-    {content: 'teste', situation: 3},
-    {content: 'aeee', situation: 3},
-    {content: '3ee', situation: 3}
+  cardsCompleted: string[] = [
+    "teste3",
+    "teste3"
   ]
 
   constructor() { }
 
   //função que retorna apenas tasks not started
-  get retornaNotStarted(): Array<Task> {
+  get retornaNotStarted(): string[] {
     return this.cardsNotStarted
   }
 
-  get retornaInProgress(): Array<Task> {
+  get retornaInProgress(): string[] {
     return this.cardsInProgress
   }
 
-  get retornaCompleted(): Array<Task> {
+  get retornaCompleted(): string[] {
     return this.cardsCompleted
   }
 

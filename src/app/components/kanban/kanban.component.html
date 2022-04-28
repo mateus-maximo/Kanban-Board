@@ -1,10 +1,14 @@
-<div class="box-cards">
+<div class="box-cards drop-area" cdkDropListGroup>
   <div class="box">
     <h1 class="title">Not started</h1>
     <div class="container-cards">
-      <ul *ngIf="getTaskNotStarted()">
-        <li *ngFor="let task of getTaskNotStarted(); let id = index">
-          <input type="text" [(ngModel)]="task.content">
+      <ul
+        cdkDropList
+        [cdkDropListData]="getTaskNotStarted()"
+        (cdkDropListDropped)="drop($event)"
+        class="example-list">
+        <li *ngFor="let task of getTaskNotStarted(); let id = index" cdkDrag>
+          <div class="task example-box">{{task}}</div>
           <mat-icon class="icon-delete" (click)="deleteTask(id, 1)">delete</mat-icon>
         </li>
       </ul>
@@ -16,9 +20,13 @@
   <div class="box">
     <h1 class="title">In Progress</h1>
     <div class="container-cards">
-      <ul *ngIf="pegarTaskInProgress()">
-        <li *ngFor="let task of pegarTaskInProgress(); let id = index">
-          <input type="text" [(ngModel)]="task.content">
+      <ul
+        cdkDropList
+        [cdkDropListData]="pegarTaskInProgress()"
+        (cdkDropListDropped)="drop($event)"
+        class="example-list">
+        <li *ngFor="let task of pegarTaskInProgress(); let id = index" cdkDrag>
+          <div class="task example-box">{{task}}</div>
           <mat-icon class="icon-delete" (click)="deleteTask(id, 2)">delete</mat-icon>
         </li>
       </ul>
@@ -30,9 +38,13 @@
   <div class="box">
     <h1 class="title">Completed</h1>
     <div class="container-cards">
-      <ul *ngIf="pegarTaskCompleted()">
-        <li *ngFor="let task of pegarTaskCompleted(); let id = index">
-          <input type="text" [(ngModel)]="task.content">
+      <ul
+        cdkDropList
+        [cdkDropListData]="pegarTaskCompleted()"
+        (cdkDropListDropped)="drop($event)"
+        class="example-list">
+        <li *ngFor="let task of pegarTaskCompleted(); let id = index" cdkDrag>
+          <div class="task example-box">{{task}}</div>
           <mat-icon class="icon-delete" (click)="deleteTask(id, 3)">delete</mat-icon>
         </li>
       </ul>
