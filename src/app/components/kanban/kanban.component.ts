@@ -12,49 +12,49 @@ export class KanbanComponent implements OnInit {
 
   constructor(private taskService: TaskService) { }
 
-  btnCriarTaskNotStarted: boolean = true;
-  btnCriarTaskInProgress: boolean = true;
-  btnCriarTaskCompleted: boolean = true;
+  btnCreateTaskNotStarted: boolean = true;
+  btnCreateTaskInProgress: boolean = true;
+  btnCreateTaskCompleted: boolean = true;
   contentNewTask: string = ''
 
   ngOnInit(): void {}
 
-  criarTaskNotStarted(): void {
-    this.btnCriarTaskNotStarted = false;
+  createTaskNotStarted(): void {
+    this.btnCreateTaskNotStarted = false;
   }
 
-  criarTaskInProgress(): void {
-    this.btnCriarTaskInProgress = false;
+  createTaskInProgress(): void {
+    this.btnCreateTaskInProgress = false;
   }
 
-  criarTaskCompleted(): void {
-    this.btnCriarTaskCompleted = false;
+  createTaskCompleted(): void {
+    this.btnCreateTaskCompleted = false;
   }
 
   getTaskNotStarted(): string[] {
     return this.taskService.retornaNotStarted
   }
 
-  pegarTaskInProgress(): string[] {
+  getTaskInProgress(): string[] {
     return this.taskService.retornaInProgress
   }
 
-  pegarTaskCompleted(): string[] {
+  getTaskCompleted(): string[] {
     return this.taskService.retornaCompleted
   }
 
   addNewTask(situation: number): void {
     if(situation === 1) {
       this.taskService.cardsNotStarted.push(this.contentNewTask)
-      this.btnCriarTaskNotStarted = true;
+      this.btnCreateTaskNotStarted = true;
     }
     else if(situation === 2) {
       this.taskService.cardsInProgress.push(this.contentNewTask)
-      this.btnCriarTaskInProgress = true;
+      this.btnCreateTaskInProgress = true;
     }
     else {
       this.taskService.cardsCompleted.push(this.contentNewTask)
-      this.btnCriarTaskCompleted = true;
+      this.btnCreateTaskCompleted = true;
     }
 
     this.contentNewTask = ''
@@ -80,9 +80,9 @@ export class KanbanComponent implements OnInit {
   }
 
   showNewBtn(box: number): void {
-    if(box === 1) this.btnCriarTaskNotStarted = true;
-    else if(box === 2) this.btnCriarTaskInProgress = true;
-    else this.btnCriarTaskCompleted = true;
+    if(box === 1) this.btnCreateTaskNotStarted = true;
+    else if(box === 2) this.btnCreateTaskInProgress = true;
+    else this.btnCreateTaskCompleted = true;
 
     this.contentNewTask = ''
   }

@@ -5,15 +5,14 @@
       <ul
         cdkDropList
         [cdkDropListData]="getTaskNotStarted()"
-        (cdkDropListDropped)="drop($event)"
-        >
+        (cdkDropListDropped)="drop($event)">
         <li *ngFor="let task of getTaskNotStarted(); let id = index" cdkDrag>
           <div class="task">{{task}}</div>
           <mat-icon class="icon-delete" (click)="deleteTask(id, 1)">delete</mat-icon>
         </li>
       </ul>
-      <button *ngIf="btnCriarTaskNotStarted" (click)="criarTaskNotStarted()" class="new">+</button>
-      <input *ngIf="!btnCriarTaskNotStarted" type="text" class="newTask" (keydown.enter)="addNewTask(1)" (focusout)="showNewBtn(1)" [(ngModel)]="contentNewTask" kbAutofocus>
+      <button *ngIf="btnCreateTaskNotStarted" (click)="createTaskNotStarted()" class="new">+</button>
+      <input *ngIf="!btnCreateTaskNotStarted" type="text" class="newTask" (keydown.enter)="addNewTask(1)" (focusout)="showNewBtn(1)" [(ngModel)]="contentNewTask" kbAutofocus>
     </div>
   </div>
 
@@ -22,15 +21,15 @@
     <div class="container-cards">
       <ul
         cdkDropList
-        [cdkDropListData]="pegarTaskInProgress()"
+        [cdkDropListData]="getTaskInProgress()"
         (cdkDropListDropped)="drop($event)">
-        <li *ngFor="let task of pegarTaskInProgress(); let id = index" cdkDrag>
+        <li *ngFor="let task of getTaskInProgress(); let id = index" cdkDrag>
           <div class="task">{{task}}</div>
           <mat-icon class="icon-delete" (click)="deleteTask(id, 2)">delete</mat-icon>
         </li>
       </ul>
-      <button *ngIf="btnCriarTaskInProgress" (click)="criarTaskInProgress()" class="new">+</button>
-      <input *ngIf="!btnCriarTaskInProgress" type="text" class="newTask" (keydown.enter)="addNewTask(2)" (focusout)="showNewBtn(2)" [(ngModel)]="contentNewTask" kbAutofocus>
+      <button *ngIf="btnCreateTaskInProgress" (click)="createTaskInProgress()" class="new">+</button>
+      <input *ngIf="!btnCreateTaskInProgress" type="text" class="newTask" (keydown.enter)="addNewTask(2)" (focusout)="showNewBtn(2)" [(ngModel)]="contentNewTask" kbAutofocus>
     </div>
   </div>
 
@@ -39,15 +38,15 @@
     <div class="container-cards">
       <ul
         cdkDropList
-        [cdkDropListData]="pegarTaskCompleted()"
+        [cdkDropListData]="getTaskCompleted()"
         (cdkDropListDropped)="drop($event)">
-        <li *ngFor="let task of pegarTaskCompleted(); let id = index" cdkDrag>
+        <li *ngFor="let task of getTaskCompleted(); let id = index" cdkDrag>
           <div class="task">{{task}}</div>
           <mat-icon class="icon-delete" (click)="deleteTask(id, 3)">delete</mat-icon>
         </li>
       </ul>
-      <button *ngIf="btnCriarTaskCompleted" (click)="criarTaskCompleted()" class="new">+</button>
-      <input *ngIf="!btnCriarTaskCompleted" type="text" class="newTask" (keydown.enter)="addNewTask(3)" (focusout)="showNewBtn(3)" [(ngModel)]="contentNewTask" kbAutofocus>
+      <button *ngIf="btnCreateTaskCompleted" (click)="createTaskCompleted()" class="new">+</button>
+      <input *ngIf="!btnCreateTaskCompleted" type="text" class="newTask" (keydown.enter)="addNewTask(3)" (focusout)="showNewBtn(3)" [(ngModel)]="contentNewTask" kbAutofocus>
     </div>
   </div>
 </div>
