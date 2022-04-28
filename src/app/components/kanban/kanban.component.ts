@@ -79,4 +79,11 @@ export class KanbanComponent implements OnInit {
     }
   }
 
+  showNewBtn(box: number): void {
+    if(box === 1) this.btnCriarTaskNotStarted = true;
+    else if(box === 2) this.btnCriarTaskInProgress = true;
+    else this.btnCriarTaskCompleted = true;
+
+    this.contentNewTask = ''
+  }
 }

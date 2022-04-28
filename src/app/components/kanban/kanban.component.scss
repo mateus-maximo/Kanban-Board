@@ -77,6 +77,14 @@ button.new:hover {
 input[type=text].newTask {
   border: 2px solid #000;
   border-radius: 5px;
+  width: 20%;
+  transition-property: width;
+  transition-duration: .5s;
+  transition-timing-function: ease-in;
+}
+
+input[type="text"].newTask:focus {
+  width: 100%;
 }
 
 .icon-delete {

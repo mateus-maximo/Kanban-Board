@@ -13,7 +13,7 @@
         </li>
       </ul>
       <button *ngIf="btnCriarTaskNotStarted" (click)="criarTaskNotStarted()" class="new">+</button>
-      <input *ngIf="!btnCriarTaskNotStarted" type="text" class="newTask" (keydown.enter)="addNewTask(1)" [(ngModel)]="contentNewTask" kbAutofocus>
+      <input *ngIf="!btnCriarTaskNotStarted" type="text" class="newTask" (keydown.enter)="addNewTask(1)" (focusout)="showNewBtn(1)" [(ngModel)]="contentNewTask" kbAutofocus>
     </div>
   </div>
 
@@ -30,7 +30,7 @@
         </li>
       </ul>
       <button *ngIf="btnCriarTaskInProgress" (click)="criarTaskInProgress()" class="new">+</button>
-      <input *ngIf="!btnCriarTaskInProgress" type="text" class="newTask" (keydown.enter)="addNewTask(2)" [(ngModel)]="contentNewTask" kbAutofocus>
+      <input *ngIf="!btnCriarTaskInProgress" type="text" class="newTask" (keydown.enter)="addNewTask(2)" (focusout)="showNewBtn(2)" [(ngModel)]="contentNewTask" kbAutofocus>
     </div>
   </div>
 
@@ -47,7 +47,7 @@
         </li>
       </ul>
       <button *ngIf="btnCriarTaskCompleted" (click)="criarTaskCompleted()" class="new">+</button>
-      <input *ngIf="!btnCriarTaskCompleted" type="text" class="newTask" (keydown.enter)="addNewTask(3)" [(ngModel)]="contentNewTask" kbAutofocus>
+      <input *ngIf="!btnCriarTaskCompleted" type="text" class="newTask" (keydown.enter)="addNewTask(3)" (focusout)="showNewBtn(3)" [(ngModel)]="contentNewTask" kbAutofocus>
     </div>
   </div>
 </div>
