@@ -15,7 +15,7 @@ export class KanbanComponent implements OnInit {
   btnCreateTaskNotStarted: boolean = true;
   btnCreateTaskInProgress: boolean = true;
   btnCreateTaskCompleted: boolean = true;
-  contentNewTask: string = ''
+  contentNewTask: string = '';
 
   ngOnInit(): void {}
 
@@ -32,15 +32,15 @@ export class KanbanComponent implements OnInit {
   }
 
   getTaskNotStarted(): string[] {
-    return this.taskService.retornaNotStarted
+    return this.taskService.retornaNotStarted;
   }
 
   getTaskInProgress(): string[] {
-    return this.taskService.retornaInProgress
+    return this.taskService.retornaInProgress;
   }
 
   getTaskCompleted(): string[] {
-    return this.taskService.retornaCompleted
+    return this.taskService.retornaCompleted;
   }
 
   addNewTask(situation: number): void {
@@ -57,13 +57,13 @@ export class KanbanComponent implements OnInit {
       this.btnCreateTaskCompleted = true;
     }
 
-    this.contentNewTask = ''
+    this.contentNewTask = '';
   }
 
   deleteTask(id: number, situation: number): void {
-    if(situation === 1) this.taskService.cardsNotStarted.splice(id, 1)
-    else if(situation === 2) this.taskService.cardsInProgress.splice(id, 1)
-    else this.taskService.cardsCompleted.splice(id, 1)
+    if(situation === 1) this.taskService.cardsNotStarted.splice(id, 1);
+    else if(situation === 2) this.taskService.cardsInProgress.splice(id, 1);
+    else this.taskService.cardsCompleted.splice(id, 1);
   }
 
   drop(event: CdkDragDrop<string[]>) {
@@ -84,6 +84,6 @@ export class KanbanComponent implements OnInit {
     else if(box === 2) this.btnCreateTaskInProgress = true;
     else this.btnCreateTaskCompleted = true;
 
-    this.contentNewTask = ''
+    this.contentNewTask = '';
   }
 }

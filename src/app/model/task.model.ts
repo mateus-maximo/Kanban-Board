@@ -1,4 +1,4 @@
 export interface Task {
-  content: string
-  situation: number
+  content: string;
+  situation: number;
 }

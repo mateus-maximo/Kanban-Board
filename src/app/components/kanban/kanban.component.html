@@ -7,7 +7,7 @@
         [cdkDropListData]="getTaskNotStarted()"
         (cdkDropListDropped)="drop($event)">
         <li *ngFor="let task of getTaskNotStarted(); let id = index" cdkDrag>
-          <div class="task">{{task}}</div>
+          <div class="task">{{ task }}</div>
           <mat-icon class="icon-delete" (click)="deleteTask(id, 1)">delete</mat-icon>
         </li>
       </ul>
@@ -24,7 +24,7 @@
         [cdkDropListData]="getTaskInProgress()"
         (cdkDropListDropped)="drop($event)">
         <li *ngFor="let task of getTaskInProgress(); let id = index" cdkDrag>
-          <div class="task">{{task}}</div>
+          <div class="task">{{ task }}</div>
           <mat-icon class="icon-delete" (click)="deleteTask(id, 2)">delete</mat-icon>
         </li>
       </ul>
@@ -41,7 +41,7 @@
         [cdkDropListData]="getTaskCompleted()"
         (cdkDropListDropped)="drop($event)">
         <li *ngFor="let task of getTaskCompleted(); let id = index" cdkDrag>
-          <div class="task">{{task}}</div>
+          <div class="task">{{ task }}</div>
           <mat-icon class="icon-delete" (click)="deleteTask(id, 3)">delete</mat-icon>
         </li>
       </ul>
