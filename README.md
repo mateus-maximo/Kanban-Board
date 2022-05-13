@@ -1,27 +1,58 @@
 # Kanban
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+![Logo of the project](https://github.com/mateus-maximo/Kanban-Board/blob/main/src/assets/gifs/Logo%20-%20Kanban.gif)
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Technology 
 
-## Code scaffolding
+Here are the technologies used in this project.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* Angular
+* Angular Material
 
-## Build
+## Getting started
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+* Dependency
+  - Node  
+  - Angular
 
-## Running unit tests
+* To install Node packages
+  - Run `npm install`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* To run the project.
+  - Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
-## Running end-to-end tests
+## How to use
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### 1 - When you access, you will see the homepage
 
-## Further help
+![Homepage image](https://github.com/mateus-maximo/Kanban-Board/blob/main/src/assets/images/homepage-kanban.PNG)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### 2 - You can add a task by clicking the + button and pressing enter
+
+![Add Task Image](https://github.com/mateus-maximo/Kanban-Board/blob/main/src/assets/images/add-task-kanban.PNG)
+
+### 3 - You can also delete a task or change it's box using drag and drop
+
+![Task Created Image](https://github.com/mateus-maximo/Kanban-Board/blob/main/src/assets/images/task-created-kanban.PNG)
+
+
+## Features
+
+The main features of the application are:
+ - Create a new task.
+ - Update a task.
+ - Change task status.
+ - Delete a task.
+
+  ## Versioning
+
+  1.0.0.0
+
+
+  ## Authors
+
+  * **Mateus Henrique Máximo Lima de Souza** 
+
+  Please follow github and join us!
+  Thanks to visiting me and good coding!
