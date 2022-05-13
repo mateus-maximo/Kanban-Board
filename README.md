@@ -41,7 +41,6 @@ Here are the technologies used in this project.
 
 The main features of the application are:
  - Create a new task.
- - Update a task.
  - Change task status.
  - Delete a task.
 
